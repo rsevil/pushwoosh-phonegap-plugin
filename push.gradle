@@ -9,11 +9,11 @@ def doExtractStringFromManifest(name) {
 }
 
 repositories {
-       jcenter()
-       maven {
-           url "https://maven.google.com"
-       }
+   maven {
+	   url "https://maven.google.com"
    }
+   jcenter()
+}
 
 android {
     sourceSets {
@@ -26,9 +26,10 @@ android {
         applicationId = doExtractStringFromManifest("package")
     }
 	
-	configurations.all {
-		resolutionStrategy {
-			force 'com.android.support:support-v4:23.4.0'
-		}
+}
+
+configurations.all {
+	resolutionStrategy {
+		force 'com.android.support:support-v4:26.0.1'
 	}
 }
